@@ -1,0 +1,34 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean.ContinuedFractionApproximants
+import HautevilleHouse.DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean.UniformDistributionLayer
+import HautevilleHouse.DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean.ErdosGintnerProbabilisticLayer
+import HautevilleHouse.DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean.LittlewoodConjectureLayer
+
+namespace HautevilleHouse
+namespace DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean
+
+def ConstrainedDiophantineApproximationClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_diophantine_approximation_closure (A : AdmissibleClass) :
+  ConstrainedDiophantineApproximationClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+theorem continued_fraction_approximants_layer_closed :
+  ContinuedFractionApproximantsClosed initialContinuedFractionDatum := by
+  exact initial_continued_fraction_approximants_closed
+
+theorem uniform_distribution_layer_closed :
+  UniformDistributionLayerClosed initialUniformDistributionCertificate := by
+  exact initial_uniform_distribution_layer_closed
+
+theorem erdos_gintner_layer_closed :
+  ErdosGintnerProbabilisticLayerClosed initialErdosGintnerCertificate := by
+  exact initial_erdos_gintner_layer_closed
+
+theorem littlewood_conjecture_layer_closed :
+  LittlewoodConjectureLayerClosed initialLittlewoodConjectureDatum := by
+  exact initial_littlewood_conjecture_layer_closed
+
+end DiophantineApproximationProbabilisticNumberTheoryCanonicalLaneLean
+end HautevilleHouse
